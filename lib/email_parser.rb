@@ -5,8 +5,9 @@
 
 class EmailParser
   
-  attr_accessor :CSV_Email :space_delimited
+  attr_accessor :email
   
+  def 
   def self.csv_email (csv)
     csv = :CSV_Email
     csv.parse    
