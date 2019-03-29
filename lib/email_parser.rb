@@ -5,11 +5,15 @@
 
 class EmailParser
   
-  attr_accessor :CSV_Email :space_delimited
+  attr_accessor :emails
   
-  def self.csv_email (csv)
-    csv = self.new
-    csv.parse    
+  def initialize(emails)
+    @emails = emails
+  end
+  
+  def parse
+    @emails.split(/[\s|,]/).reject{|x| x.empty?}.uniq
+  end
 end
 
 
