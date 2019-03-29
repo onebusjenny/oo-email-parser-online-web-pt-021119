@@ -7,10 +7,12 @@ class EmailParser
   
   attr_accessor :email
   
-  def 
-  def self.csv_email (csv)
-    csv = :CSV_Email
-    csv.parse    
+  def initialize(emails)
+    @emails = emails
+  end
+  
+  def parse
+    @emails.split(/[\s|,]/).reject{|x| x.empty?}.uniq
   end
 end
 
